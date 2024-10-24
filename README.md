@@ -1,15 +1,14 @@
-# [Traccar Manager for iOS](https://www.traccar.org/manager)
-
-[![Download on the App Store](http://www.tananaev.com/badges/app-store.svg)](https://itunes.apple.com/app/traccar-manager/id1113966562)
+# [Gonzher Manager for Android](https://www.gps.gonzher.com)
 
 ## Overview
 
-Traccar Manager is a mobile application to manage GPS tracking devices. It requires a Traccar server instance to work.
+Gonzher Manager is a mobile application for managing GPS tracking devices, based on the original Traccar mobile app. Simply replace this code:
+```
+<string name="default_url">https://api.gonzher.com</string>
+```
+with your URL, and it will automatically update for your users.
 
-## Team
-
-- Anton Tananaev ([anton@traccar.org](mailto:anton@traccar.org))
-- William Pearse ([w.pearse@gmail.com](mailto:w.pearse@gmail.com))
+You can also change the images, logos, and package name to customize the app as your own.
 
 ## License
 
