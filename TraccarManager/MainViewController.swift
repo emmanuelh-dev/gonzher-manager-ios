@@ -86,17 +86,19 @@ class MainViewController: UIViewController, WKUIDelegate {
     }
     
     private func loadPage() {
-        if let urlString = UserDefaults.standard.object(forKey: "url") as? String {
-            var urlComponents = URLComponents(string: urlString)
-            if let eventId = pendingEventId {
-                urlComponents?.queryItems = [URLQueryItem(name: "eventId", value: eventId)]
-                pendingEventId = nil
-            }
-            if let url = urlComponents?.url {
-                self.webView.load(URLRequest(url: url))
-            }
+        let urlString = UserDefaults.standard.string(forKey: "url") ?? ""
+        
+        var urlComponents = URLComponents(string: urlString)
+        if let eventId = pendingEventId {
+            urlComponents?.queryItems = [URLQueryItem(name: "eventId", value: eventId)]
+            pendingEventId = nil
+        }
+        
+        if let url = urlComponents?.url {
+            self.webView.load(URLRequest(url: url))
         }
     }
+
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
